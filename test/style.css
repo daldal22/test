@@ -1,0 +1,601 @@
+@font-face {
+    font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 700;
+    src: local('Gmarket Sans Bold'), local('GmarketSans-Bold'),
+    url('http://script.ebay.co.kr/fonts/GmarketSansBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('http://script.ebay.co.kr/fonts/GmarketSansBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 500;
+    src: local('Gmarket Sans Medium'), local('GmarketSans-Medium'),
+    url('http://script.ebay.co.kr/fonts/GmarketSansMedium.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('http://script.ebay.co.kr/fonts/GmarketSansMedium.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 300;
+    src: local('Gmarket Sans Light'), local('GmarketSans-Light'),
+    url('http://script.ebay.co.kr/fonts/GmarketSansLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('http://script.ebay.co.kr/fonts/GmarketSansLight.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    color: #333;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button{
+    background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+
+html, body{
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+/* 헤더 */
+
+.container{
+    height: 100%;
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* modal */
+
+.pause-modal{
+    position: absolute;
+    width: 800px;
+    height: calc(100% - 70px);
+    visibility: hidden;
+    z-index: 2;
+    background: #4C594F;
+}
+
+.modal-body{
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    width: 300px;
+    height: 230px;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.modal-top-area{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title-modal{
+    font-family: 'Noto Sans KR';
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+}
+
+.x-mark{
+    position: absolute;
+    width: 18px;
+    margin-top: 2px;
+    right: 0;
+    cursor: pointer;
+}
+
+.line{
+    width: 280px;
+}
+
+.wrap-option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.option-select{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.new-game{
+    border-radius: 30px;
+    background: #5398C3;
+    padding: 8px 0px 10px;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    width: 110px;
+}
+
+.continue{
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 8px 0px 10px;
+    color: #333;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    width: 110px;
+}
+
+.level-select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.level-title{
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.item-level{
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.easy{
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    background: #5398C3;
+    border-radius: 30px;
+    padding: 8px 0px 10px;
+    width: 110px;
+}
+
+.difficult{
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    background: #fff;
+    border-radius: 30px;
+    padding: 8px 0px 10px;
+    width: 110px;
+}
+
+/* 시작화면 */
+
+.wrap-main_img{
+    width: 800px;
+    background: #4C594F;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .main_img{
+    width: 340px;
+    margin: 0 auto;
+} */
+
+.btn-main-area{
+    padding-top: 40px;
+}
+
+.btn-play-game{
+    border-radius: 30px;
+    background: #fff;
+    color: #4C594F;
+    padding: 8px 0px;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 700;
+    width: 160px;
+    margin-right: 40px;
+}
+
+.btn-game-ranking{
+    border-radius: 30px;
+    background: #fff;
+    color: #4C594F;
+    padding: 8px 0px;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 700;
+    width: 160px;
+}
+
+/* game-page */
+
+.header{
+    background: #242625;
+    display: flex;
+    padding: 16px 22px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .new-game{
+    border: 1px solid #fff;
+    border-radius: 30px;
+    background: #fff;
+    color: #333;
+    padding: 4px 12px 6px 12px;
+    font-size: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom: 26px;
+} */
+
+.header-area{
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.timer-btn i{
+    color: #fff;
+    font-size: 16px;
+}
+
+.fa-pause{
+    margin-right: 16px;
+}
+
+.timer{
+    color: #fff;
+}
+
+.game-score{
+    color: #fff;
+    position: absolute;
+    left: 48%;
+}
+
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+    height: calc(100% - 70px);
+}
+
+
+.pause{
+    background: #fff;
+    width: 380px;
+    height: 260px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.side-left{
+    background: #35403A;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+
+.side-right{
+    background: #35403A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-board{
+    background: #4C594F;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 0px 30px;
+}
+
+/*side-left*/
+
+.side-empty-card,
+.side-backward-card {
+    width: 60px;
+    margin-top: 26px;
+    box-shadow: 2px 2px 5px #333;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.side-backward-card {
+    z-index: 0;
+    transition: opacity 0.3s;
+}
+
+
+.side-forward-card-3{
+    width: 60px;
+    top: 140px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 2px 2px 5px #333;
+    z-index: 1;
+}
+
+.side-forward-card-2{
+    width: 60px;
+    top: 160px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 2px 2px 5px #333;
+    z-index: 2;
+}
+
+.side-forward-card-1{
+    width: 60px;
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 2px 2px 5px #333;
+    z-index: 3;
+}
+
+/*side-right*/
+
+.heart-card{
+    width: 60px;
+    margin-top: 26px;
+    padding-bottom: 20px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+.clover-card, .diamond-card{
+    width: 60px;
+    padding-bottom: 20px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+.spade-card{
+    width: 60px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+.fa-rotate-right{
+    border-radius: 100px;
+    padding: 16px;
+    background: #fff;
+    color: #35403A;
+    font-size: 16px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+.fa-lightbulb{
+    border-radius: 300px;
+    padding: 16px;
+    background: #fff;
+    color: #35403A;
+    font-size: 16px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+/*game-board*/
+
+.card-area_0, .card-area_1, .card-area_2, .card-area_3, .card-area_4,
+.card-area_5, .card-area_6{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+
+/* card */
+
+.backward-card-0, .backward-card-1, .backward-card-2, .backward-card-3,
+.backward-card-4, .backward-card-5, .backward-card-6, .forward-card-0,
+.forward-card-1, .forward-card-2, .forward-card-3, .forward-card-4,
+.forward-card-5, .forward-card-6, .forward-card-7, .forward-card-8,
+.forward-card-9, .forward-card-10, .forward-card-11, .forward-card-12,
+.forward-card-13, .forward-card-14, .forward-card-15, .forward-card-16,
+.forward-card-17, .forward-card-18, .forward-card-19{
+    position: absolute;
+    width: 60px;
+    box-shadow: 2px 2px 5px #333;
+}
+
+.backward-card-0, .forward-card-0{
+    top: 26px; /* top으로 다 바꾸기 */
+}
+/* position이랑 width는 전부 한 곳에 두고 top은 따로 만들어서 중복되는거 두기 */
+/* 그림자 css에서 넣어보고 아니다싶으면 일러로 일일히 넣기 */
+
+.backward-card-1, .forward-card-1{
+    top: 46px;
+}
+
+.backward-card-2, .forward-card-2{
+    top: 66px;
+}
+
+.backward-card-3, .forward-card-3{
+    top: 86px;
+}
+
+.backward-card-4, .forward-card-4{
+    top: 106px;
+}
+
+.backward-card-5, .forward-card-5{
+    top: 126px;
+}
+
+.backward-card-6, .forward-card-6{
+    top: 146px;
+}
+
+.forward-card-7{
+    top: 166px;
+}
+
+.forward-card-8{
+    top: 186px;
+}
+
+.forward-card-9{
+    top: 206px;
+}
+
+.forward-card-10{
+    top: 226px;
+}
+
+.forward-card-11{
+    top: 246px;
+}
+
+.forward-card-12{
+    top: 266px;
+}
+
+.forward-card-13{
+    top: 286px;
+}
+
+.forward-card-14{
+    top: 306px;
+}
+
+.forward-card-15{
+    top: 326px;
+}
+
+.forward-card-16{
+    top: 346px;
+}
+
+.forward-card-17{
+    top: 366px;
+}
+
+.forward-card-18{
+    top: 386px;
+}
+
+.forward-card-19{
+    top: 406px;
+}
+
+/* css 우선 순위 */
+/* element << 가장 낮음 ex) button, ul */
+/* id > class */
+/* important */
+/* inline(style="color:red") 이게 가장 높음 */
+
+/* 
+1. 카드 52장 초기화하고 섞기
+2. 게임보드 초기화하고 랜덤으로 섞인 카드덱에서 카드 뽑아서 각 카드 에리어에 위치해야함
+3. 카드 이동할 때 드래그와 클릭 방식으로 이동 가능하게 만들어야함
+4. 승리 조건 만들어야함 a~k까지 오른쪽 사이드 영역에 순서대로 위치하게
+5. 여러장의 카드가 순서대로 나열되어있고, 카드 에리어들 중에 이동할 수 있는 조건에 맞는 카드가 있다면 한꺼번에 이동이 가능해야함
+6. 나열되지 않은 카드배열 뒤집기
+7. 앞면으로 되어있는 카드가 해당 에리어에서 사라지면 그 다음 순서에 있는 카드가 뒤집어져야한다
+8. 카드 붙일때 색깔이 다른지 확인하고 위에 있는 숫자가 바로 상위의 숫자인지 확인해야함
+9. 취소하기 누르면 이전에 옮긴 카드 되돌리기
+10. 힌트 버튼 누르면 화면에 있는 카드들 중에 가능한 경우를 따져서 카드를 옮김
+*/
+
+/* 점수 넣기, 랭킹 넣기 */
+/* 클리어 화면 만들기 점수랑 랭킹 나오게 */
+/* 힌트 알고리즘 만들기 레이아웃도 다시 만들기... */
+
+/* 
+카드를 기초 카드 더미로 옮기면 10점을 얻습니다.
+카드를 덱에서 줄 스택으로 옮기면 5점을 얻습니다.
+줄 스택에서 카드를 뒤집으면 5점을 얻습니다.
+카드가 기초 카드 더미에서 줄 스택으로 되돌아 오면 15점을 잃습니다.
+세 장씩 옵션으로 게임하는 경우 덱의 모든 카드를 3회까지 볼 수 있으며 그 이후에는 1회 당 20점을 잃습니다.
+한 장씩 옵션으로 게임하는 경우 덱의 모든 카드를 1회까지 볼 수 있으며 그 이후에는 1회 당 100점을 잃습니다.
+시간 제한된 게임에서는 10초 지날 때마다 2점씩 잃는 대신 게임을 끝내면 보너스 점수를 얻습니다. 게임을 빨리 끝낼수록 더 많은 보너스 점수를 얻습니다.
+*/
+
+/* 
+일시정지와 엑스를 감싸고있는 부모요소에게 포지션 릴레이티브 주고
+디스플레이 뭐든 중앙정렬하게 부모요소에게 준다
+엑스를 포지션 앱솔루트로 주고 라이트 값 0 준다
+*/
+
+/*
+카드 드래그 해보기 못하겠으면 알고리즘이라도 알아오기
+카드 이미지 다 만들어놓기
+카드 내용물이 있는 객체 만들어보기(덱을 만들어야함)
+*/
+
+/* 
+카드 이미지들 수정하기
+점수 가운데에 해놓은거 앱솔루트 해서 가운데 정렬하기
+카드 JQKA 숫자로 바꾸기??
+*/
