@@ -56,7 +56,7 @@ window.addEventListener('load', startClock);
 
 
 function imgFind(image) {
-    return `./dist/${image}.svg`;
+    return `${image}.svg`;
 } // 이미지 경로 찾는 함수
 
 function createBoardArea() {
@@ -75,7 +75,7 @@ function createBoardArea() {
                 className = `forward-card-${j} area${i}`;
                 // cardElement.addEventListener('dragstart', dragStart);
             } else{
-                imgPath = './dist/backward_orange.svg';
+                imgPath = 'backward_orange.svg';
                 className = `backward-card-${j} area${i}`;
             }
             cardElement.innerHTML = `<img src="${imgPath}">`;
